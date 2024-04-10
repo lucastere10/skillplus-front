@@ -10,7 +10,7 @@ interface UpdateUserForm {
     dataNascimento: string;
 }
 
-interface ContactForm{
+interface ContactForm {
     contatoNome: string
     contatoUrl: string
     contatoTipo: string
@@ -32,6 +32,22 @@ interface CartaoEditForm {
     cartaoUrl: string
 }
 
-interface CartaoEditBackgroundForm{
+interface CartaoEditBackgroundForm {
     cartaoBackground?: string
+}
+
+interface UserSkillForm {
+    skillNome: string
+    usuarioSkillDominio: string
+    usuarioSkillVersao?: string
+    ativo: boolean
+}
+
+interface SkillForm {
+    skillNome: string
+    skillDescricao: string
+    skillCategoria: string
+    skillDificuldade: string
+    skillUrl?: string
+    ativo: boolean
 }

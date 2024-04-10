@@ -10,12 +10,14 @@ import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import LoginLottie from "@/components/Animations/LoginLottie";
 import { QrCodeDialog } from "@/components/Dialogs/QrCodeDialog";
 import { fetchUserVerify } from "@/services/api/api";
+import { useTheme } from "next-themes";
 
 //REFERENCIAS https://tailwindflex.com/tag/login
 
 export default function Login() {
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const router = useRouter();
+    const { theme } = useTheme();
 
     const {
         register,
@@ -26,6 +28,7 @@ export default function Login() {
     });
 
     const onSubmit: SubmitHandler<LoginRequest> = async (data: LoginRequest) => {
+        console.log(data.login, data.senha, data.rememberMe)
         const res = await signIn('credentials', {
             login: data.login,
             senha: data.senha,
@@ -67,9 +70,11 @@ export default function Login() {
             <div className="max-w-screen-xl m-0 sm:m-10 bg-white dark:bg-slate-800 shadow sm:rounded-lg flex justify-center flex-1">
                 <div className="lg:w-1/2 xl:w-5/12 p-6 sm:p-8">
                     <div className="mt-6 flex flex-col items-center">
-                        <h1 className="text-2xl xl:text-3xl font-extrabold">
-                            Bem Vindo!
-                        </h1>
+                        {theme === 'dark' ? (
+                            <img src="/images/logo-white.png" className="scale-[50%]" alt="" />
+                        ) : (
+                            <img src="/images/logo-color.png" className="scale-[50%]" alt="" />
+                        )}
                         <div className="w-full flex-1 mt-8">
                             <div className="flex flex-col items-center">
 

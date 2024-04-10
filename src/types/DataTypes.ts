@@ -1,8 +1,8 @@
 interface User {
-    usuarioId:number
+    usuarioId: number
     nome: string
     nomeSocial?: string
-    email:string
+    email: string
     telefone?: string
     dataNascimento: string
     twoFa: boolean
@@ -28,4 +28,22 @@ interface Cartao {
     cartaoUrl: string
     qrcode: string
     ativo: boolean
+}
+
+interface Skill {
+    skillId: number
+    skillNome: string
+    skillDescricao: string
+    skillCategoria: string
+    skillDificuldade: string
+    skillUrl: string
+    ativo: boolean
+}
+
+interface UserSkill {
+    usuarioSkillId: number
+    usuarioSkillVersao: string
+    usuarioSkillDominio: string
+    ativo: boolean
+    skill: Skill
 }

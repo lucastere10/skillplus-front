@@ -11,8 +11,10 @@ import {
 import { useEffect, useState } from "react";
 import { InputOTPLogin } from "@/components/Inputs/InputOTP";
 import { Separator } from "@/components/ui/separator";
-import Image from "next/image";
 import { fetchSecret, verifySecret } from "@/services/api/api";
+import { Input } from "@/components/ui/input";
+import Image from "next/image";
+import { emitShowCode } from "@/services/api/websocket";
 
 export function QrCodeDialog() {
     const [src, setSrc] = useState<string>('')
@@ -82,7 +84,7 @@ export function QrCodeDialog() {
                     <InputOTPLogin otpCode={code} setOtpCode={setCode} />                    
                     <p>{verify}</p>
                     <Button onClick={() => { handleVerify(code) }} className="bg-black">Verificar</Button>
-                    {/* <Button onClick={() => {emitShowCode()}}>Teste</Button> */}
+                    <Button onClick={() => {emitShowCode()}}>Teste</Button>
                 </div>
             </DialogContent>
         </Dialog>

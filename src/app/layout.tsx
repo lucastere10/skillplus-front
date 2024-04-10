@@ -3,6 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/themeProvider";
 import NextAuthSessionProvider from "@/providers/sessionProvider";
+import { WithHeader } from "@/components/Header/WithHeader";
+import { StateChangeProvider } from "@/context/stateChangeContext";
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,7 +29,11 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            {children}
+            <WithHeader />
+            <StateChangeProvider>
+              {children}
+              <Toaster position="top-center" closeButton richColors />
+            </StateChangeProvider>
           </ThemeProvider>
         </NextAuthSessionProvider>
       </body>
