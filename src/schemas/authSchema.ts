@@ -99,3 +99,17 @@ export const editCartaoSchema = yup.object().shape({
         .string()
         .required('Digite a URL do cartão'),
 });
+
+export const userSkillSchema = yup.object().shape({
+    skillNome: yup
+        .string()
+        .required('Escolha uma skill'),
+    usuarioSkillDominio: yup
+        .string()
+        .required('Defina o domínio sobre a skill'),
+    usuarioSkillVersao: yup
+        .string(),
+    ativo: yup
+        .boolean()
+        .required()
+});

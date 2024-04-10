@@ -8,12 +8,14 @@ import { ThemeToggle } from "@/components/Switch/ThemeToggle";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import RegisterLottie from "@/components/Animations/RegisterLottie";
 import { registerUser } from "@/services/api/api";
+import { useTheme } from "next-themes";
 
 export default function Register() {
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const [confirmPassword, setConfirmPassword] = useState("");
     const [password, setPassword] = useState("");
     const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] = useState(false);
+    const { theme } = useTheme()
     const router = useRouter();
 
     const {
@@ -46,9 +48,11 @@ export default function Register() {
                 </div>
                 <div className="lg:w-1/2 xl:w-5/12 p-6 sm:px-12 sm:py-6">
                     <div className="mt-4 flex flex-col items-center">
-                        <h1 className="text-2xl xl:text-3xl font-extrabold">
-                            Nova Conta
-                        </h1>
+                        {theme === 'dark' ? (
+                            <img src="/images/logo-white.png" className="scale-[50%]" alt="" />
+                        ) : (
+                            <img src="/images/logo-color.png" className="scale-[50%]" alt="" />
+                        )}
                         <div className="w-full flex-1 mt-6">
                             <div className="mx-auto max-w-md">
                                 <form
