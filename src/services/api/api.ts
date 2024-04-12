@@ -1,5 +1,6 @@
 import axios from "axios";
 import { getSession } from 'next-auth/react';
+import { toast } from "sonner";
 
 const api = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8080/api",
@@ -22,11 +23,11 @@ export const registerUser = async (data: RegisterRequest): Promise<boolean> => {
       login: data.login,
       senha: data.senha
     });
-    alert('Usuário registrado com sucesso!');
+    toast.success('Usuário registrado com sucesso!');
     return true;
   } catch (error: any) {
     console.error(error);
-    alert(error.response.data.userMessage);
+    toast.error(error.response.data.userMessage);
     return false;
   }
 };

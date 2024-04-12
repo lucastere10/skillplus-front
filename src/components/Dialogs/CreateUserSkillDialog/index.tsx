@@ -176,7 +176,6 @@ export function CreateUserSkillDialog() {
                             <Input
                                 id="usuarioSkillVersao"
                                 {...register('usuarioSkillVersao')}
-                                defaultValue="Sem vesão"
                                 className="col-span-3"
                             />
                         </div>
@@ -214,7 +213,6 @@ export function CreateUserSkillDialog() {
                         <Button type="submit">Adiconar</Button>
                     </DialogFooter>
                 </form>
-                <button onClick={() => { handleFetchSkills() }}>debug</button>
             </DialogContent>
         </Dialog>
     )

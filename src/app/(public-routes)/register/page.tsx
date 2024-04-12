@@ -9,6 +9,7 @@ import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import RegisterLottie from "@/components/Animations/RegisterLottie";
 import { registerUser } from "@/services/api/api";
 import { useTheme } from "next-themes";
+import { toast } from "sonner";
 
 export default function Register() {
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -29,7 +30,7 @@ export default function Register() {
 
     const onSubmit: SubmitHandler<RegisterRequest> = async (data) => {
         if (password !== confirmPassword) {
-            alert("Senhas não coincidem!");
+            toast.error("Senhas não coincidem!");
         } else {
             const isRegistered = await registerUser(data);
             if (isRegistered) {
@@ -65,7 +66,7 @@ export default function Register() {
                                         name="nome"
                                         id="nome"
                                         placeholder="Nome"
-                                        className="w-full mt-5 px-6 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-md focus:outline-none focus:border-gray-400 focus:bg-white"
+                                        className="w-full mt-5 px-6 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-md focus:outline-none focus:border-gray-400 focus:bg-white dark:text-black"
                                     />
                                     {errors.nome && (
                                         <p className="text-red-500 text-sm mb-1" >
@@ -78,7 +79,7 @@ export default function Register() {
                                         name="login"
                                         id="login"
                                         placeholder="Email"
-                                        className="w-full mt-5 px-6 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-md focus:outline-none focus:border-gray-400 focus:bg-white"
+                                        className="w-full mt-5 px-6 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-md focus:outline-none focus:border-gray-400 focus:bg-white dark:text-black"
                                     />
                                     {errors.login && (
                                         <p className="text-red-500 text-sm mb-1" >
@@ -93,7 +94,7 @@ export default function Register() {
                                             name="senha"
                                             id="senha"
                                             placeholder="Senha"
-                                            className="w-full px-6 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-md focus:outline-none focus:border-gray-400 focus:bg-white"
+                                            className="w-full px-6 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-md focus:outline-none focus:border-gray-400 focus:bg-white dark:text-black"
                                         />
                                         <div className='absolute inset-y-0 right-0 pr-3 flex items-center'>
                                             <button type="button" className='cursor-pointer' onClick={() => setIsPasswordVisible(!isPasswordVisible)}>
@@ -122,7 +123,7 @@ export default function Register() {
                                             id="confirmarSenha"
                                             onChange={e => setConfirmPassword(e.target.value)}
                                             placeholder="Confirmar Senha"
-                                            className="w-full px-6 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-md focus:outline-none focus:border-gray-400 focus:bg-white"
+                                            className="w-full px-6 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-md focus:outline-none focus:border-gray-400 focus:bg-white dark:text-black"
                                         />
                                         <div className='absolute inset-y-0 right-0 pr-3 flex items-center'>
                                             <button type="button" className='cursor-pointer' onClick={() => setIsConfirmPasswordVisible(!isConfirmPasswordVisible)}>

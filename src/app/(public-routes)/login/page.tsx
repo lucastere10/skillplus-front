@@ -119,7 +119,7 @@ export default function Login() {
                                 <QrCodeDialog />
 
                             </div>
-                            <div className="my-12 border-b text-center">
+                            <div className="my-8 border-b text-center">
                                 <div
                                     className="leading-none px-2 inline-block text-sm tracking-wide font-medium bg-white dark:bg-slate-800 transform translate-y-1/2">
                                     Ou faça o login com um email
@@ -137,7 +137,7 @@ export default function Login() {
                                         name="login"
                                         id="login"
                                         placeholder="Email"
-                                        className="w-full px-6 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 focus:outline-none focus:border-gray-400 focus:bg-white"
+                                        className="w-full px-6 py-3 rounded-lg dark:text-black font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 focus:outline-none focus:border-gray-400 focus:bg-white"
                                     />
                                     {errors.login && (
                                         <p className="text-red-500 text-sm mb-1">
@@ -151,7 +151,7 @@ export default function Login() {
                                             name="senha"
                                             id="senha"
                                             placeholder="••••••••"
-                                            className="w-full px-6 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
+                                            className="w-full px-6 py-3 rounded-lg dark:text-black font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
                                         />
                                         <div className='absolute inset-y-0 right-0 pr-3 mt-5 flex items-center'>
                                             <button type="button" className='cursor-pointer' onClick={() => setIsPasswordVisible(!isPasswordVisible)}>
