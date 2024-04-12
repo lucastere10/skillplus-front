@@ -2,11 +2,12 @@
 import { generateDummyPassword } from "@/util/dummyPassword";
 import { getSession, signIn } from "next-auth/react";
 import { io } from "socket.io-client";
+import { toast } from "sonner";
 const socket = io("ws://192.168.1.5:8878?room=a", {
-  withCredentials: true,
-  extraHeaders: {
-    "sockets-header": "*"
-  },
+    withCredentials: true,
+    extraHeaders: {
+        "sockets-header": "*"
+    },
 });
 
 export const emitShowCode = async () => {
@@ -31,7 +32,7 @@ socket.on('get_credentials', async (data: any) => {
         alert(res.error)
     } else {
         await getSession();
-        alert('Login Realizado com Sucesso!')
+        toast.info("Login Realizado com sucesso")
         window.location.href = '/';
     }
 });

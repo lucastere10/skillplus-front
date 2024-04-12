@@ -1,8 +1,10 @@
 'use client'
 import AboutLottie from "@/components/Animations/AboutLottie";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 export default function About() {
+    const route = useRouter()
 
     return (
         <main className="flex px-16 py-8 xl:px-36 xl:py-12">
@@ -23,7 +25,7 @@ export default function About() {
                     </p>
                 </div>
                 <div className="flex mt-3 md:mt-0 md:flex-row flex-col gap-4">
-                    <Button className="rounded-full text-lg px-16 py-6">.Card para Você</Button>
+                    <Button onClick={() => {route.push('/cards')}} className="rounded-full text-lg px-16 py-6">.Card para Você</Button>
                     <Button variant={'outline'} className="rounded-full text-lg px-16 py-6 border-primary">.Card para Empresas</Button>
                 </div>
             </div>
