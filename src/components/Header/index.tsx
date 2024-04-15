@@ -85,7 +85,7 @@ export const PageHeader: FC<HeaderProps> = () => {
                                             {picture ? (
                                                 <button onClick={() => { router.push('/upload-picture') }}>
                                                     <img
-                                                        className="rounded-full border-2 dark:border-white dark:bg-white p-0.5"
+                                                        className="rounded-full object-cover border-2 dark:border-white dark:bg-white p-0.5"
                                                         src={picture}
                                                         alt="User profile"
                                                         width={56}

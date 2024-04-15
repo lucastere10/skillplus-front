@@ -79,7 +79,7 @@ export function ProfileCard({ usuario }: ProfileCardProps) {
                     <MessageSquare />
                 </div>
                 <Avatar className="size-32 border-4">
-                    <AvatarImage src={src} />
+                <AvatarImage src={src} className="object-cover" />
                     <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
                 <div className="rounded-full bg-stone-100 dark:bg-stone-700 p-2 transition-transform transform hover:scale-110">

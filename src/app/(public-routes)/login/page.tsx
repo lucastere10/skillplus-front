@@ -11,6 +11,7 @@ import LoginLottie from "@/components/Animations/LoginLottie";
 import { QrCodeDialog } from "@/components/Dialogs/QrCodeDialog";
 import { fetchUserVerify } from "@/services/api/api";
 import { useTheme } from "next-themes";
+import { toast } from "sonner";
 
 //REFERENCIAS https://tailwindflex.com/tag/login
 
@@ -28,16 +29,17 @@ export default function Login() {
     });
 
     const onSubmit: SubmitHandler<LoginRequest> = async (data: LoginRequest) => {
-        console.log(data.login, data.senha, data.rememberMe)
+        //console.log(data.login, data.senha, data.rememberMe)
         const res = await signIn('credentials', {
             login: data.login,
             senha: data.senha,
             rememberMe: data.rememberMe,
             redirect: false,
         })
+        console.log(res)
 
-        if (res?.error) {
-            alert(`An error occurred during sign in: ${res.error}`);
+        if (res?.status === 401) {
+            toast.error(`Credenciais não encontradas`);
         } else {
             await getSession();
             const verify = await fetchUserVerify()

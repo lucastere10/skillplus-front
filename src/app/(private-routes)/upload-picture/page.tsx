@@ -86,7 +86,7 @@ export default function UploadPicture() {
             <h1 className="font-bold text-4xl">Vamos adicionar uma foto ao perfil?</h1>
             <p className="text-center">Adicionar uma foto ao seu perfil ajuda seus amigos a reconhecê-lo e cria uma sensação de comunidade.</p>
             <Avatar className="size-60">
-                <AvatarImage src={src} />
+                <AvatarImage className='object-cover' src={src} />
                 <AvatarFallback>CN</AvatarFallback>
             </Avatar>
             <form className='flex flex-col gap-8 items-center' onSubmit={handleSubmit(onSubmit)}>

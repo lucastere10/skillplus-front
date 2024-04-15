@@ -48,7 +48,9 @@ export default function CompleteProfile() {
             const data = await fetchUser();
             setValue('nome', data['nome']);
             setValue('nomeSocial', data['nomeSocial']);
-            setValue('dataNascimento', formatDate(data['dataNascimento']));
+            if (data['dataNascimento']) {
+                setValue('dataNascimento', formatDate(data['dataNascimento']));
+            }
             setValue('telefone', data['telefone']);
             setUser(data);
             setLoading(false);
