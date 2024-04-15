@@ -15,6 +15,7 @@ export default function SearchProfiles() {
     const [search, setSearch] = useState('');
     const [firstLoad, setFirstLoad] = useState(true); 
     const [totalPages, setTotalPages] = useState(0);
+    const [sort, setSort] = useState("USUA_CD_ID,asc")
     const [page, setPage] = useState(0);
     const [size, setSize] = useState(5);
 
@@ -22,7 +23,7 @@ export default function SearchProfiles() {
     let debounce = require('lodash.debounce');
     const handleUsers = debounce(async () => {
         if (firstLoad) setLoading(true);
-        const response = await fetchUsers(search, page, size)
+        const response = await fetchUsers(search, page, size, sort)
         setUsers(response.content);
         setTotalPages(response.totalPages)
         setLoading(false);

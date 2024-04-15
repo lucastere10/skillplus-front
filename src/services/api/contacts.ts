@@ -16,6 +16,28 @@ export const registerContact = async (data: ContactForm) => {
     }
 }
 
+export const fetchContacts = async (search:string, page:number, size:number, sort:string) => {
+    try {
+        const response = await api.get(`/contatos`, {
+            params: {
+                search,
+                page,
+                size,
+                sort,
+            }
+        });
+        return response.data;
+    } catch (err: any) {
+        if (err.response) {
+            console.error('Error fetching data:', err.response.data);
+            return { data: null, error: err.response.data };
+        } else {
+            console.error('Error:', err.message);
+            return { data: null, error: err.message };
+        }
+    }
+}
+
 export const fetchUserContacts = async () => {
     try {
         const response = await api.get(`/contatos/usuario`);

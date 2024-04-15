@@ -46,10 +46,10 @@ export function UserSkillCard({ userSkill }: Readonly<{ userSkill: UserSkill }>)
 
     return (
         <div className="grid grid-cols-5 gap-2 items-center">
-            <p className="hidden col-span-2 md:block">{userSkill.skill.skillNome}</p>
-            <p className="text-md hover:text-primary font-mono">{userSkill.usuarioSkillVersao}</p>
-            <p className="text-md hover:text-primary font-mono">{userSkill.usuarioSkillDominio}</p>
-            <div className="flex justify-end gap-4 items-center">
+            <p className="col-span-4 md:col-span-2">{userSkill.skill.skillNome}</p>
+            <p className="hidden text-md hover:text-primary font-mono md:block">{userSkill.usuarioSkillVersao}</p>
+            <p className="hidden text-md hover:text-primary font-mono md:block">{userSkill.usuarioSkillDominio}</p>
+            <div className="md:flex justify-end gap-4 items-center">
                 <Switch defaultChecked={userSkill.ativo} onClick={() => { handlePatchUserSkill() }} />
                 <DeleteContactPopover title="Skill" onDelete={handleDeleteUserSkill} />
             </div>

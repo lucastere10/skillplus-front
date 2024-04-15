@@ -63,12 +63,13 @@ export const PageHeader: FC<HeaderProps> = () => {
                         </div>
                     </button>
                     <div className="items-baseline gap-8 hidden xl:flex">
-                        <button onClick={() => { router.push('/cards') }} className="text-lg font-semibold leading-6 hover:text-primary">Comprar</button>
+                        <button onClick={() => { router.push('/cards') }} className="text-lg font-semibold leading-6 hover:text-primary">Cartões</button>
+                        <button onClick={() => { router.push('/search-profiles') }} className="text-lg font-semibold leading-6 hover:text-primary">Pesquisar</button>
                         <button onClick={() => { router.push('/about') }} className="text-lg font-semibold leading-6 hover:text-primary">Sobre</button>
                         <button onClick={() => { router.push('/features') }} className="text-lg font-semibold leading-6 hover:text-primary">Features</button>
                         <button onClick={() => { router.push('/contact') }} className="text-lg font-semibold leading-6 hover:text-primary">Contato</button>
                         <button onClick={() => { router.push('/help') }} className="text-lg font-semibold leading-6 hover:text-primary">Ajuda</button>
-                        <button onClick={() => { router.push('/search-profiles') }} className="text-xl ml-1 font-bold leading-6 hover:text-primary text-yellow-600">dotCard Pro</button>
+                        <button onClick={() => { router.push('/') }} className="text-xl ml-1 font-bold leading-6 hover:text-primary text-yellow-600">SKILL+ Pro</button>
                     </div>
 
                     {status === 'loading' ?
