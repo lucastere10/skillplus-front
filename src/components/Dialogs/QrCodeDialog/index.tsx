@@ -84,7 +84,6 @@ export function QrCodeDialog() {
                     <InputOTPLogin otpCode={code} setOtpCode={setCode} />                    
                     <p>{verify}</p>
                     <Button onClick={() => { handleVerify(code) }} className="bg-black">Verificar</Button>
-                    <Button onClick={() => {emitShowCode()}}>Teste</Button>
                 </div>
             </DialogContent>
         </Dialog>

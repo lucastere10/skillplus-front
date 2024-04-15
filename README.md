@@ -1,6 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SKILL+
 
-## Getting Started
+## Descrição
+
+Este projeto é uma aplicação frontend em Next.js 13 com Tailwind. É uma aplicação para compartilhamento de contatos e habilidades.
+
+## Recursos
+
+- Sistema de upload de foto e atualização de perfil.
+- Possibilidade de adicionar habilidades ao perfil e torná-las privadas ou públicas.
+- Possibilidade de adicionar contatos no perfil e torná-los privados ou públicos.
+- Sistema de pesquisa de usuários, com as informações que o mesmo optou por deixar público.
+- Sistema de cartões, podendo adicionar novos cartões com QR Code, ativar ou desativar, mudar informações e até imagem de background.
+- Tela de admin para controle de habilidades, usuários, contatos e cartões.
+- Paginação.
+
+## Autenticação
+
+Autenticação e autorização através do Next.js. Possui autenticação por credencial e login social utilizando Google e GitHub, além de um sistema de autenticação por QR Code ainda em testes.
+
+## Tecnologias Utilizadas
+
+- Next.js
+- Tailwind
+- Shadcn UI para criação de componentes.
+- Axios para API.
+- Next-themes para temas.
+- React Hook Form para formulários.
+- Yup para validação.
+- Animações em Lottie.
+- Socket.io-client.
+
+## Em Desenvolvimento
+
+- Sistema de filtros mais robusto.
+- Sistema de mensagens em tempo real usando WebSockets.
+- Sistema de envio de email.
+
+## Telas
+
+<img src="./public/fotos_projeto/home.png">
+<br>
+<img src="./public/fotos_projeto/home-dark.png">
+<br>
+<img src="./public/fotos_projeto/cards.png">
+<br>
+<img src="./public/fotos_projeto/profile.png">
+<br>
+<img src="./public/fotos_projeto/admin.png">
+<br>
+<img src="./public/fotos_projeto/login.png">
+<br>
+
+## Como Instalar
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 First, run the development server:
 
@@ -19,6 +72,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
+## Licença
+
+----
 
 ## Learn More
 

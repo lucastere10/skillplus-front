@@ -126,7 +126,7 @@ export const fetchUserVerify = async () => {
 
 export const verifySecret = async (code: string) => {
   try {
-    const response = await api.post(`/auth/totp/verify?code=${code}`);
+    const response = await api.post(`/auth/totp/validar?code=${code}`);
     console.log("Verify :", response.data)
     return response.data;
   } catch (err: any) {
