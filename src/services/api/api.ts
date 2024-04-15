@@ -190,16 +190,96 @@ export const updateUser = async (data: any): Promise<boolean> => {
   }
 }
 
-export const fetchUsers = async (search:string, page:number, size:number) => {
+export const fetchUsers = async (search: string, page: number, size: number, sort: string) => {
   try {
-    const response = await api.get(`/usuarios`, { 
-      params: { 
+    const response = await api.get(`/usuarios`, {
+      params: {
         search,
         page,
-        size
-      } 
+        size,
+        sort
+      }
     });
     return response.data;
+  } catch (err: any) {
+    if (err.response) {
+      console.error('Error fetching data:', err.response.data);
+      return { data: null, error: err.response.data };
+    } else {
+      console.error('Error:', err.message);
+      return { data: null, error: err.message };
+    }
+  }
+}
+
+export const enableTwoFa = async () => {
+  try {
+    const response = await api.put(`/usuarios/update/2fa`);
+    return response.data;
+  } catch (err: any) {
+    if (err.response) {
+      console.error('Error fetching data:', err.response.data);
+      return { data: null, error: err.response.data };
+    } else {
+      console.error('Error:', err.message);
+      return { data: null, error: err.message };
+    }
+  }
+}
+
+export const activateUser = async (id: number) => {
+  try {
+    await api.put(`/usuarios/status/ativar/${id}`);
+    toast.info('Usuário ativado com sucesso')
+    return { data: 'Usuário ativado com sucesso', error: null };
+  } catch (err: any) {
+    if (err.response) {
+      console.error('Error fetching data:', err.response.data);
+      return { data: null, error: err.response.data };
+    } else {
+      console.error('Error:', err.message);
+      return { data: null, error: err.message };
+    }
+  }
+}
+
+export const inactivateUser = async (id: number) => {
+  try {
+    await api.put(`/usuarios/status/desativar/${id}`);
+    toast.info('Usuário inativado com sucesso')
+    return { data: 'Usuário inativado com sucesso', error: null };
+  } catch (err: any) {
+    if (err.response) {
+      console.error('Error fetching data:', err.response.data);
+      return { data: null, error: err.response.data };
+    } else {
+      console.error('Error:', err.message);
+      return { data: null, error: err.message };
+    }
+  }
+}
+
+export const blockUser = async (id: number) => {
+  try {
+    await api.put(`/usuarios/status/bloquear/${id}`);
+    toast.info('Usuário bloqueado com sucesso')
+    return { data: 'Usuário bloqueado com sucesso', error: null };
+  } catch (err: any) {
+    if (err.response) {
+      console.error('Error fetching data:', err.response.data);
+      return { data: null, error: err.response.data };
+    } else {
+      console.error('Error:', err.message);
+      return { data: null, error: err.message };
+    }
+  }
+}
+
+export const banUser = async (id: number) => {
+  try {
+    await api.put(`/usuarios/status/banir/${id}`);
+    toast.info('Usuário banido com sucesso')
+    return { data: 'Usuário banido com sucesso', error: null };
   } catch (err: any) {
     if (err.response) {
       console.error('Error fetching data:', err.response.data);

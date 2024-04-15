@@ -113,3 +113,22 @@ export const userSkillSchema = yup.object().shape({
         .boolean()
         .required()
 });
+
+export const skillSchema = yup.object().shape({
+    skillNome: yup
+        .string()
+        .required('Digite o nome da Habilidade'),
+    skillDescricao: yup
+        .string(),
+    skillCategoria: yup
+        .string()
+        .required('Escolha uma categoria válida'),
+    skillDificuldade: yup
+        .string()
+        .required('Escolha a dificuldade'),
+    skillUrl: yup
+        .string(),
+    ativo: yup
+        .boolean()
+        .required()
+});

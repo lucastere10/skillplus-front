@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 const AlreadyAuthPaths = ["/login", "/register"];
-const NotAuthPaths = ["/upload-picture","/complete-profile", "/cards", "/cards/new", "/profile", "/search-profiles"]
+const NotAuthPaths = ["/upload-picture","/complete-profile", "/cards", "/cards/new", "/profile", "/search-profiles", "/admin"]
 
 export async function middleware(request: NextRequest) {
   if (request.cookies.has('next-auth.session-token')) {

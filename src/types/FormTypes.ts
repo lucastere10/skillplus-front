@@ -45,7 +45,16 @@ interface UserSkillForm {
 
 interface SkillForm {
     skillNome: string
-    skillDescricao: string
+    skillDescricao?: string
+    skillCategoria: string
+    skillDificuldade: string
+    skillUrl?: string
+    ativo: boolean
+}
+
+interface UpdateSkillForm {
+    skillNome: string
+    skillDescricao?: string
     skillCategoria: string
     skillDificuldade: string
     skillUrl?: string

@@ -9,6 +9,7 @@ interface User {
     usuarioStatus: string
     usuarioTipo: string
     dataCadastro: string
+    dataAtualizacao: string
 }
 
 interface Contato {
@@ -28,6 +29,8 @@ interface Cartao {
     cartaoUrl: string
     qrcode: string
     ativo: boolean
+    dataCadastro: string
+    dataAtualizacao: string
 }
 
 interface Skill {
@@ -38,6 +41,8 @@ interface Skill {
     skillDificuldade: string
     skillUrl: string
     ativo: boolean
+    dataCadastro: string
+    dataAtualizacao: string
 }
 
 interface UserSkill {
