@@ -12,7 +12,6 @@ import { useEffect, useState } from "react";
 import { InputOTPLogin } from "@/components/Inputs/InputOTP";
 import { Separator } from "@/components/ui/separator";
 import { fetchSecret, verifySecret } from "@/services/api/api";
-import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import { emitShowCode } from "@/services/api/websocket";
 
@@ -21,21 +20,19 @@ export function QrCodeDialog() {
     const [code, setCode] = useState<string>('')
     const [verify, setVerify] = useState<string>('')
 
-    // useEffect(() => {
-    //     handleSecret();
+    useEffect(() => {
+        handleSecret();
 
-    //     const intervalId = setInterval(async () => {
-    //         await handleSecret();
-    //     }, 30000);
+        const intervalId = setInterval(async () => {
+            await handleSecret();
+        }, 30000);
 
-    //     return () => clearInterval(intervalId);
-    // }, []);
+        return () => clearInterval(intervalId);
+    }, []);
 
     useEffect(() => {
         handleSecret();
     }, []);
-
- 
 
     async function handleSecret() {
         const secret = await fetchSecret();
@@ -84,6 +81,7 @@ export function QrCodeDialog() {
                     <InputOTPLogin otpCode={code} setOtpCode={setCode} />                    
                     <p>{verify}</p>
                     <Button onClick={() => { handleVerify(code) }} className="bg-black">Verificar</Button>
+                    <Button onClick={() => { emitShowCode() }} className="bg-black hidden">Verificar</Button>
                 </div>
             </DialogContent>
         </Dialog>

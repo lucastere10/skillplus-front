@@ -14,8 +14,8 @@ export function UserSkillCard({ userSkill }: Readonly<{ userSkill: UserSkill }>)
         try {
             const data = await activateUserSkill(userSkill.usuarioSkillId);
             setStateChanged(prevState => !prevState);
-            const ativo = (data.privado ? "Ativada" : "Desativada")
-            toast.success(`hABILIDADE ${ativo} com sucesso`, {
+            const ativo = (data.ativo ? "Ativada" : "Desativada")
+            toast.success(`Habilidade ${ativo} com sucesso`, {
                 description: formattedDate,
                 action: {
                     label: "fechar",

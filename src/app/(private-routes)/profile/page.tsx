@@ -97,7 +97,7 @@ export default function Profile() {
                                         </div>
                                         <Separator />
                                         <div className="flex p-0.5 sm:p-2 justify-center">
-                                            <p>12/09/1994</p>
+                                            <p>{user?.dataNascimento}4</p>
                                         </div>
                                     </CardContent>
                                 </Card>
@@ -126,7 +126,7 @@ export default function Profile() {
                                     <Separator />
                                     <div className="flex p-2 justify-between">
                                         <p>Membro desde</p>
-                                        <p>12/09/1994</p>
+                                        <p>{user?.dataCadastro}</p>
                                     </div>
                                 </CardContent>
                             </Card>
